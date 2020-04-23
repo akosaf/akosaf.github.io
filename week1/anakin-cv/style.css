@@ -17,6 +17,7 @@ div .all {
   position: relative;
   bottom: 150px;
   left: 22%;
+  max-width: 70%;
   font-size: 36px;
   color: #222;
   font-family: 'Abril Fatface', cursive;
