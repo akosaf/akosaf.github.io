@@ -1,0 +1,28 @@
+main {
+  font-family: 'Sen', sans-serif;
+}
+
+img {
+  width: 300px;
+}
+
+div {
+  margin: 10px;
+  text-align: center;
+  font-size: 30px;
+  color: blue;
+}
+
+a:visited {
+  color: red;
+  text-decoration: none;
+}
+
+section {
+  display: flex;
+  
+}
+
+a {
+  display: block;
+}
