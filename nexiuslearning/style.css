@@ -1,0 +1,39 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+}
+
+body > div.container {
+    height: 100%;
+}
+
+body > div.container > div.row {
+    height: 100%;
+}
+
+#ContentDiv {
+    height: 100%;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+}
+
+#ContentDiv iframe {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    border: none;
+    display: block;
+}
+
+      
+#ContentDiv {
+    height: 95%;
+}
+      
