@@ -6,11 +6,19 @@ ul, li {
     padding: 0;
 }
 
-.home {
+.home, .back {
     position: fixed;
     right: 10px;
     top: -19px;
     width: 70px;
     background-color: #777;
     color: white;
+}
+
+.home {
+    right: 10px;
+}
+
+.back {
+    right: 130px;
 }

@@ -1,0 +1,19 @@
+body {
+    max-width: 250px;
+}
+
+#b325, .b326, .b329 {
+    font-weight: bold;
+}
+
+.container .asteroid {
+    border: solid 1px green;
+}
+
+p {
+    background: yellow;
+}
+
+.big {
+    color: blue;
+}
