@@ -103,7 +103,7 @@ button {
     }
 }
 
-@media (max-width: 996px) {
+@media (max-width: 1052px) {
     h1 {
         font-size: 26px;
         text-align: center;
