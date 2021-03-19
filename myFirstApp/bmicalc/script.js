@@ -7,7 +7,7 @@ function bmi() {
     let weight = document.getElementById("wh").value;
     let height = document.getElementById("he").value;
     let result = weight / Math.pow(height/100, 2);
-    document.getElementById("res").innerHTML = `Your BMI is: ${result}`;
+    document.getElementById("res").innerHTML = `Your BMI is: ${Math.round(result*100)/100}`;
     document.getElementById("res").style.opacity = "100%";
     
     evaluation(result);
