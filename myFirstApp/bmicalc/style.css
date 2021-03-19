@@ -41,7 +41,7 @@ legend {
     border-radius: 4px;
 }
 
-input, div {
+input, #res {
     display: block;
     margin: 20px 0;
     width: 100%;
@@ -95,4 +95,41 @@ button {
     padding: 6px 10px;
     border-radius: 4px;
     color:rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 1290px) {
+    main {
+        width: 60%;
+    }
+}
+
+@media (max-width: 996px) {
+    h1 {
+        font-size: 26px;
+        text-align: center;
+    }
+    main {
+        width: 75%;
+        margin: 32px auto;
+    }
+}
+
+@media (max-width: 660px) {
+    h1 {
+        font-size: 24px;
+    }
+    main {
+        width: 90%;
+        margin: 25px auto;
+    }
+    input {
+        padding: 4px;
+        margin: 10px 0;
+    }
+    #res {
+        height: auto;
+    }
+    fieldset {
+        border:rgba(100, 100, 100, 0.02) double 5px;
+    }
 }

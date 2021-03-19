@@ -1,8 +1,8 @@
-/*document.getElementById("btn").onclick = () => {
-    //event.preventDefault();
+document.getElementById("btn").onclick = () => {
+    event.preventDefault();
     bmi();
 };
-*/
+
 function bmi() {
     let weight = document.getElementById("wh").value;
     let height = document.getElementById("he").value;
