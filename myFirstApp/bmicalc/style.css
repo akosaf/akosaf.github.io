@@ -4,8 +4,8 @@
 }
 
 body {
-    background: url(/myFirstApp/bmicalc/doctor-with-stethoscope-hands-hospital-background.jpg) no-repeat center;
-    background-size: 300vh;
+    background: url(/myFirstApp/bmicalc/doctor-with-stethoscope-hands-hospital-background.jpg) no-repeat center fixed;
+    background-size: cover;
 }
 
 header {
