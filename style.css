@@ -22,20 +22,3 @@ ul, li {
 .back {
     right: 130px;
 }
-
-@media (max-width: 460px) {
-    .home, .back {
-        padding: 0px 25px;
-        font-size: 20px;
-        height: 35px;
-        right: 0px;
-    }
-    .home {
-        top: 20px;
-        border-radius: 0 0 10px 10px;
-    }
-    .back {
-        top: -19px;
-        border-radius: 10px 10px 0 0;
-    }
-}
