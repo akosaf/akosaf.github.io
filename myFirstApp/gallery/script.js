@@ -58,6 +58,7 @@ function choosePic(i) {
     $('h2').text(galleryArr[i].title);
     $('p').text(galleryArr[i].paragraph);
     current = i;
+    cancelUpload();
 }
 
 function prev() {
@@ -81,19 +82,68 @@ function next() {
     choosePic(current);
 }
 
-$('li').click(function(item) {
-    i = item.target.id.slice(4)
-    choosePic(i)
-})
+///Choose thumbnail
+function choose() {
+    $('li').click(function(item) {
+        i = item.target.id.slice(4)
+        choosePic(i)
+})}
+
 ///KEY EVENTS
 $(document).keydown(function(e) {
     if (e.keyCode == 37) {prev()}
     else if (e.keyCode == 39) {next()}
 })
 
-/*
-$(document).on('keypress', function(e) {
-    if(e.which == 13) {console.log("enter")}
-})
-*/
 //$('*').css('opacity', '100')
+
+///Extra functions
+
+function addView() {
+    $('div.upld').css('display', 'block')
+    $('#addBtn').css('display', 'none')
+}
+
+function cancelUpload() {
+    $('div.upld').css('display', 'none')
+    $('#addBtn').css('display', 'inline')
+    $('#uploadSrc').val("")
+    $('#uploadTitle').val("")
+    $('#uploadInfo').val("")
+}
+
+function upload() {
+    i = galleryArr.length
+    update(galleryArr.length)
+    $('ul').append(`<li id="item${i}" style="background-image: url(${galleryArr[i].image})"></li>`)
+    choose()
+}
+
+function update(i) {
+    galleryArr[i] = {
+        image: $('#uploadSrc').val(),
+        title: $('#uploadTitle').val(),
+        paragraph: $('#uploadInfo').val()
+    }
+    cancelUpload()
+    choosePic(i)
+}
+
+function modify() {
+    update(current)
+    $('#uplBtn').attr('onclick', 'upload()')
+    $('ul').html("")
+    for (let i in galleryArr) {
+        $('ul').append(`<li id="item${i}" style="background-image: url(${galleryArr[i].image})"></li>`)
+    };
+    choose()
+}
+
+function edit() {
+    $('#uploadSrc').val(`${galleryArr[current].image}`)
+    $('#uploadTitle').val(`${galleryArr[current].title}`)
+    $('#uploadInfo').val(`${galleryArr[current].paragraph}`)
+    addView()
+    $('#uplBtn').attr('onclick', 'modify()')
+}
+choose()

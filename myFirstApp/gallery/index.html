@@ -18,8 +18,17 @@
                     <h2>Piano</h2>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem in eveniet sed nobis. Itaque, autem! Sapiente, non repellendus! Quas totam doloremque adipisci necessitatibus eius ad, quasi nobis illum quam itaque!</p>
                 </div>
+                <button id="addBtn" onclick="addView()">Add</button>
+                <button id="editBtn" onclick="edit()">Edit</button>
+                <div class="upld">
+                    <button id="cclBtn" onclick="cancelUpload()">X</button>
+                    <button id="uplBtn" onclick="upload()">&check;</button>
+                    <input id="uploadTitle" type="text" placeholder="Title">
+                    <input id="uploadInfo" type="text" placeholder="Info">
+                    <!-- <input id="uploadSrc" type="file" placeholder="Browse photos"> -->
+                    <input id="uploadSrc" type="text" placeholder="Insert link">
+                </div>
             </div>
-            
             <button id="next" class="navBtn" onclick="next()"></button>
         </div>
         <div class="small">
