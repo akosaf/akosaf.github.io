@@ -1,17 +1,26 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Baloo Tamma 2', cursive;
+    width: auto;
+    height: auto;
+    padding: 0;
+    /* opacity: 0; */
+}
+h2, p {
+    font-family: 'Nixie One', cursive;
 }
 body {
     /* background: rgb(255,255,255);
     background: radial-gradient(circle, rgba(255,255,255,1) 34%, rgba(210,210,210,1) 100%) fixed; */
 }
-
+.big {
+    box-shadow: 3px 3px 5px rgba(100, 100, 100, 0.5);
+}
 main {
     /* background: rgba(255, 255, 255, 0); */
     max-width: 800px;
     margin: 60px auto;
-    box-shadow: 3px 3px 5px rgba(100, 100, 100, 0.5);
 }
 .navBtn {
     height: 400px;
@@ -19,6 +28,7 @@ main {
     background: url(/myFirstApp/gallery/arrow.svg) no-repeat center,
     linear-gradient(#fff, #eee);
     border: none;
+    z-index: 2;
 }
 #next {
     transform: scaleX(-1);
@@ -29,35 +39,51 @@ main {
 .bigPic {
     height: 400px;
     width: 700px;
+    background-image: url(./img/DSC_0412.JPG);
+    display: flex;
+    align-items: flex-end;
 }
-/*h2, p {
+div.info {
+    /* position: absolute; */
+    /* height: 400px; */
+    /* bottom: 23px; */
+}
+h2, p {
     width: 700px;
-    position: relative;
-}*/
+    color: white;
+    background: rgba(0, 0, 0, 0.25);
+}
+h2 {
+    padding: 8px 8px 0px 8px;
+}
+p {
+    padding: 4px 8px 8px 8px;
+}
 .small {
     width: 800px;
-    height: 150px;
+    height: auto;
     margin: 0 auto;
+}
+li, .bigPic {
+    background-size: cover;
 }
 ul {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     height: 100px;
     padding: 0;
     margin-top: 30px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: row;
 }
 li {
     list-style: none;
-}
-li img {
     width: 100px;
-    height: auto;
+    height: 70px;
     padding: 0;
     flex-shrink: 1;
 }
 li:hover {
-    transform: scale(1.35);
+    transform: scale(1.3);
 }

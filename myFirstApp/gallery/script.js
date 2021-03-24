@@ -43,20 +43,29 @@ let galleryArr = [
     },
 ];
 
-/*for (let i = 0; i < galleryArr.length-1; i++) {*/
+// LOAD THUMBNAILS
+//for (let i = 0; i < galleryArr.length-1; i++) {
 for (let i in galleryArr) {
-    $('ul').append(`<li><img src="${galleryArr[i].image}" alt="${galleryArr[i].title}" id="item${i}"></li>`)
+    //$('ul').append(`<li><img src="${galleryArr[i].image}" alt="${galleryArr[i].title}" id="item${i}"></li>`)
+    $('ul').append(`<li id="item${i}" style="background-image: url(${galleryArr[i].image})"></li>`)
 };
 
 let current = 0;
+
+function choosePic(i) {
+//    $('.bigPic').attr('src', galleryArr[i].image);
+    $('.bigPic').css('background-image', `url(${galleryArr[i].image})`);
+    $('h2').text(galleryArr[i].title);
+    $('p').text(galleryArr[i].paragraph);
+    current = i;
+}
 
 function prev() {
     //
     (current <= 0)
         ? current = galleryArr.length-1
         : current--
-    console.log(current);
-    $('.bigPic').attr('src', galleryArr[current].image)
+    choosePic(current)
 }
 
 function next() {
@@ -69,13 +78,22 @@ function next() {
     (current == galleryArr.length-1)
         ? current = 0
         : current++
-    console.log(current);
-    $('.bigPic').attr('src', galleryArr[current].image)
+    choosePic(current);
 }
 
 $('li').click(function(item) {
     i = item.target.id.slice(4)
-    console.log(i)
-    $('.bigPic').attr('src', galleryArr[i].image)
-    current = i
+    choosePic(i)
 })
+///KEY EVENTS
+$(document).keydown(function(e) {
+    if (e.keyCode == 37) {prev()}
+    else if (e.keyCode == 39) {next()}
+})
+
+/*
+$(document).on('keypress', function(e) {
+    if(e.which == 13) {console.log("enter")}
+})
+*/
+//$('*').css('opacity', '100')
