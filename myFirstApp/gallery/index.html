@@ -21,12 +21,13 @@
                 <button id="addBtn" onclick="addView()">Add</button>
                 <button id="editBtn" onclick="edit()">Edit</button>
                 <div class="upld">
-                    <button id="cclBtn" onclick="cancelUpload()">X</button>
+                    <button id="cclBtn" onclick="cancelUpload()"><</button>
                     <button id="uplBtn" onclick="upload()">&check;</button>
+                    <button id="delBtn" style="display: none" onclick="del()">X</button>
                     <input id="uploadTitle" type="text" placeholder="Title">
                     <input id="uploadInfo" type="text" placeholder="Info">
-                    <!-- <input id="uploadSrc" type="file" placeholder="Browse photos"> -->
-                    <input id="uploadSrc" type="text" placeholder="Insert link">
+                    <input id="uploadSrc" type="file" placeholder="Browse photos">
+                    <!-- <input id="uploadSrc" type="text" placeholder="Insert link"> -->
                 </div>
             </div>
             <button id="next" class="navBtn" onclick="next()"></button>
