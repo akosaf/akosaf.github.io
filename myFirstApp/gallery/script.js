@@ -177,3 +177,10 @@ function del() {
     next()
     prev()
 }
+
+//kérdések:
+//jobbra/balra nyilak funkciójának inaktiválása az edit menüben
+//lehet-e formázni a placeholdert
+//todo appal valami kérdés
+//miért nem ugyanaz a for és a for in (load thumbnails)
+//a thumbnailbar miért nem zsugorodik össze?
