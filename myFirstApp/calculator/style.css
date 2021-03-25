@@ -65,8 +65,12 @@ span {
     }
     button {
         width: 25vw;
+        height: 15vh;
     }
     #screen {
         width: 100vw;
+        height: 18vh;
+        font-size: 7vh;
+        /* font-size: 12vh; */
     }
 }
