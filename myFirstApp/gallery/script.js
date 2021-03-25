@@ -102,7 +102,7 @@ arrowKeys()
 ///Extra functions
 
 function addView() {
-    $('input').unbind("keydown");
+    $(document).unbind("keydown");
     $('div.upld').css('display', 'block')
     $('#addBtn').css('display', 'none')
     $('#uplBtn').attr('onclick', 'upload()')

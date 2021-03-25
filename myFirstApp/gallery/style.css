@@ -164,7 +164,7 @@ div.upld input {
     h2, p, .bigPic {
         width: 100%;
     }
-    button#addBtn #editBtn, button#addBtn:hover, #editBtn:hover {
+    /* button#addBtn #editBtn, button#addBtn:hover, #editBtn:hover {
         visibility: hidden;
         transition: none;
         display: none;
@@ -177,5 +177,6 @@ div.upld input {
         overflow: hidden;
         font-size: 0px;
         border: none;
-    }
+        opacity: 0;
+    } */
 }
