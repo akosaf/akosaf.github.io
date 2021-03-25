@@ -182,5 +182,5 @@ function del() {
 //jobbra/balra nyilak funkciójának inaktiválása az edit menüben
 //lehet-e formázni a placeholdert
 //todo appal valami kérdés
-//miért nem ugyanaz a for és a for in (load thumbnails)
+//miért nem ugyanaz a for és a for in (load thumbnails) -- de ugyanaz
 //a thumbnailbar miért nem zsugorodik össze?
