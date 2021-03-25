@@ -30,7 +30,8 @@ function operation(o) {
     disp('up', `${b} ${c}`)
 }
 function equals() {
-    if (c == "+") {disp('dwn', parseFloat(b) + parseFloat(a))}
+    if (a == "666") {darkmode(); clr()}
+    else if (c == "+") {disp('dwn', parseFloat(b) + parseFloat(a))}
     else if (c == "-") {disp('dwn', parseFloat(b) - parseFloat(a))}
     else if (c == "*") {disp('dwn', parseFloat(b) * parseFloat(a))}
     else if (c == "/") {disp('dwn', parseFloat(b) / parseFloat(a))}
@@ -78,4 +79,4 @@ function darkmode() {
     $('button').css('border-color', '#444')
 }
 
-darkmode()
+//darkmode()

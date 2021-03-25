@@ -1,6 +1,8 @@
-/* font-family: 'Audiowide', cursive;
+/* 
+font-family: 'Audiowide', cursive;
 font-family: 'Black Ops One', cursive;
-font-family: 'Wallpoet', cursive; */
+font-family: 'Wallpoet', cursive;
+*/
 
 * {
     font-family: 'Audiowide', cursive;
@@ -51,28 +53,23 @@ span {
     font-size: 12vh;
     font-family: 'Wallpoet', cursive;
 }
-/* button {
-    background: #eee;
-    color: #000;
-}
-#screen {
-    background: #eee;
-    color: #000;
-} */
-@media (max-width: 600px) {
+@media (max-width: 720px) {
     main {
         width: 100%;
     }
     button {
         width: 25vw;
-        height: 14vh;
     }
     #screen {
         width: 100vw;
+    }
+}
+@media (max-width: 376px) {
+    button {
+        height: 14vh;
+    }
+    #screen {
         height: 18vh;
         font-size: 5vh;
-    }
-    span {
-        /* font-size: 10vh; */
     }
 }
