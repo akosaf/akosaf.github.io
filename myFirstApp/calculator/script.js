@@ -44,6 +44,9 @@ function backspace() {
 //ne lehessen az elején nulla
 //ne lehessen több tizedespont
 //ha tizedesponttal kezdek, tegyen elé nullát
+//nullával nem lehet osztani
+//nem lehet operátorral kezdeni
+//tovább kell számolni az előző eredménnyel
 ///KEYEVENTS
 $(document).keydown(function(e) {
     if(e.keyCode == 97) {add(1)}

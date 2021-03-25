@@ -97,7 +97,6 @@ function arrowKeys() {
         else if (e.keyCode == 39) {next()}
 })}
 arrowKeys()
-//$('*').css('opacity', '100')
 
 ///Extra functions
 
@@ -180,7 +179,10 @@ function del() {
 
 //kérdések:
 //jobbra/balra nyilak funkciójának inaktiválása az edit menüben
-//lehet-e formázni a placeholdert
-//todo appal valami kérdés
+//todo appal volt valami kérdés
 //miért nem ugyanaz a for és a for in (load thumbnails) -- de ugyanaz
 //a thumbnailbar miért nem zsugorodik össze?
+
+$(document).ready(()=>{
+    $('body').css('opacity', '100')
+})
