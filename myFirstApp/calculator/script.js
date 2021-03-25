@@ -75,4 +75,4 @@ function darkmode() {
     $('button').css('border-color', '#444')
 }
 
-darkmode()
+//darkmode()
