@@ -106,6 +106,7 @@ function addView() {
     $('div.upld').css('display', 'block')
     $('#addBtn').css('display', 'none')
     $('#uplBtn').attr('onclick', 'upload()')
+    $('#editBtn').css('display', 'none')
 }
 
 function cancelUpload() {
@@ -161,7 +162,6 @@ function edit() {
     $('#uploadTitle').val(`${galleryArr[current].title}`)
     $('#uploadInfo').val(`${galleryArr[current].paragraph}`)
     addView()
-    $('#editBtn').css('display', 'none')
     $('#uplBtn').attr('onclick', 'modify()')
     $('#delBtn').css('display', 'inline')
 }

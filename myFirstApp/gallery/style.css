@@ -111,16 +111,21 @@ div.upld {
     z-index: 1;
     display: none;
 }
+div.upld button{
+    padding: 7px 0px;
+}
 div.upld button, #addBtn, #editBtn {
     height: 40px;
     width: 40px;
-    padding: 7px 0px;
     border-radius: 50%;
     border: none;
     font-size: 17px;
     background-color: rgba(0, 0, 0, 0.08);
-    color: #333;
+    color: #fff;
     /* font-weight: bold; */
+}
+::placeholder {
+    color: rgba(0, 0, 0, 0.616);
 }
 div.upld input {
     height: 40px;
@@ -131,7 +136,9 @@ div.upld input {
     background-color: rgba(0, 0, 0, 0);
 }
 #addBtn, #editBtn {
-    opacity: 0;
+    opacity: 20%;
+    padding: 5px 0px;
+    border: solid 2px rgba(255, 255, 255, 0.3);
     transition: opacity 200ms;
 }
 #addBtn:hover, #editBtn:hover {
@@ -164,19 +171,4 @@ div.upld input {
     h2, p, .bigPic {
         width: 100%;
     }
-    /* button#addBtn #editBtn, button#addBtn:hover, #editBtn:hover {
-        visibility: hidden;
-        transition: none;
-        display: none;
-        transform: scale(0);
-        position: fixed;
-        left: -999px;
-        z-index: -2;
-        height: 0;
-        padding: 0;
-        overflow: hidden;
-        font-size: 0px;
-        border: none;
-        opacity: 0;
-    } */
 }
