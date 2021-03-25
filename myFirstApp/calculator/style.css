@@ -69,8 +69,10 @@ span {
     }
     #screen {
         width: 100vw;
-        height: 15vh;
-        font-size: 4vh;
+        height: 14vh;
+        font-size: 5vh;
+    }
+    span {
         font-size: 10vh;
     }
 }

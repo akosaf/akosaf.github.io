@@ -67,3 +67,12 @@ $(document).keydown(function(e) {
 $(document).keypress(function(e) {
     else if(e.which == 13) {equals()}
 })*/
+function darkmode() {
+    $('#screen').css('background', '#222')
+    $('#screen').css('color', '#fff')
+    $('button').css('background', '#222')
+    $('button').css('color', '#fff')
+    $('button').css('border-color', '#444')
+}
+
+darkmode()
