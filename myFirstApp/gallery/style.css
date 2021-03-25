@@ -140,7 +140,7 @@ div.upld input {
     padding: 5px 0px;
     border: solid 2px rgba(255, 255, 255, 0.3);
     transition: opacity 200ms;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 #addBtn:hover, #editBtn:hover {
     opacity: 100%;
