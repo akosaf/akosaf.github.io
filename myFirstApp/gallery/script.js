@@ -28,7 +28,7 @@ let galleryArr = [
     },
     {
         image: "./img/SAM_6494.jpg",
-        title: "Blow ball",
+        title: "Dandelion",
         paragraph: "Lorem in eveniet sed nobis. Itaque, autem! Sapiente, non repellendus! Quas totam doloremque adipisci necessitatibus eius ad, quasi nobis illum quam itaque!"
     },
     {
@@ -62,7 +62,6 @@ function choosePic(i) {
 }
 
 function prev() {
-    //
     (current <= 0)
         ? current = galleryArr.length-1
         : current--
@@ -70,12 +69,6 @@ function prev() {
 }
 
 function next() {
-    //
-//    if (current == galleryArr.length-1) {
-//        current = 0;
-//    } else {
-//        current++;
-//    }
     (current == galleryArr.length-1)
         ? current = 0
         : current++
@@ -129,7 +122,7 @@ function upload() {
 function update(i) {
     if ($('#uploadSrc').val() != "") {
         Arr = $('#uploadSrc').val().split("fakepath")[1].split("")
-        path = "./img/more/"
+        path = "./img/"
         for (let j = 1; j < Arr.length; j++) {
             path += Arr[j]
         }
@@ -173,8 +166,10 @@ function del() {
         $('ul').append(`<li id="item${i}" style="background-image: url(${galleryArr[i].image})"></li>`)
     };
     choose()
-    next()
-    prev()
+    if (current == galleryArr.length) {
+        current = 0;
+    }
+    choosePic(current);
 }
 
 //kérdések:
