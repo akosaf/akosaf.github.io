@@ -73,6 +73,6 @@ span {
         font-size: 5vh;
     }
     span {
-        font-size: 10vh;
+        /* font-size: 10vh; */
     }
 }
