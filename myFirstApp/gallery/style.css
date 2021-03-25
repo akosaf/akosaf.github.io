@@ -113,6 +113,7 @@ div.upld {
 }
 div.upld button{
     padding: 7px 0px;
+    background-color: rgba(0, 0, 0, 0.08);
 }
 div.upld button, #addBtn, #editBtn {
     height: 40px;
@@ -120,9 +121,8 @@ div.upld button, #addBtn, #editBtn {
     border-radius: 50%;
     border: none;
     font-size: 17px;
-    background-color: rgba(0, 0, 0, 0.08);
     color: #fff;
-    /* font-weight: bold; */
+    font-weight: bold;
 }
 ::placeholder {
     color: rgba(0, 0, 0, 0.616);
@@ -140,6 +140,7 @@ div.upld input {
     padding: 5px 0px;
     border: solid 2px rgba(255, 255, 255, 0.3);
     transition: opacity 200ms;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 #addBtn:hover, #editBtn:hover {
     opacity: 100%;
@@ -147,7 +148,7 @@ div.upld input {
 #editBtn {
     position: absolute;
     top: 10px;
-    left: 50px;
+    left: 52px;
 }
 @media (max-width: 800px) {
     .small {
