@@ -2,12 +2,17 @@
 let a = "", b = "", c = "";
 ///OPERATING
 function add(num) {
-    if (num == 0 && a == "") {
-        //
-    } else if (num == '.' && a == "") {
-        //
+    /*if (b != "") {
+        //clr()
+    } else */if (num == '.' && (a == "" || a == "0")) {
+        a = "0"
+    } else if (a != "" && b == "" && c == "") {
+        //clr()
+    } else if (a.includes(".")) {
+        console.log("error")
     }
-    if (b == "") {disp('up', a+num)}
+    if /*(num == 0 && a == "0") {a = ""; num = ""}
+    else if*/ (b == "") {disp('up', a+num)}
     else {disp('up', `${b} ${c} ${a+num}`)}
     a += num;
 }
@@ -23,19 +28,23 @@ function clr() {
     disp('up', a)
 }
 function operation(o) {
-    b = a;
-    c = o;
-    a = "";
-    disp('up', a)
-    disp('up', `${b} ${c}`)
+    if (a == "") {clr()}
+    else {
+        b = a;
+        c = o;
+        a = "";
+        disp('up', a)
+        disp('up', `${b} ${c}`)
+    }
 }
 function equals() {
     if (a == "666") {darkmode(); clr()}
-    else if (c == "+") {disp('dwn', parseFloat(b) + parseFloat(a))}
-    else if (c == "-") {disp('dwn', parseFloat(b) - parseFloat(a))}
-    else if (c == "*") {disp('dwn', parseFloat(b) * parseFloat(a))}
-    else if (c == "/") {disp('dwn', parseFloat(b) / parseFloat(a))}
-    a = ""; b = ""; c = "";
+    else if (a == 0 && c =="/") {disp('dwn', "Error")}
+    else if (c == "+") {a = parseFloat(b) + parseFloat(a); disp('dwn', a)}
+    else if (c == "-") {a = parseFloat(b) - parseFloat(a); disp('dwn', a)}
+    else if (c == "*") {a = parseFloat(b) * parseFloat(a); disp('dwn', a)}
+    else if (c == "/") {a = parseFloat(b) / parseFloat(a); disp('dwn', a)}
+    b = ""; c = "";
 }
 function backspace() {
     a = a.substring(0, a.length-1);
@@ -44,11 +53,13 @@ function backspace() {
 ///BUGFIXES
 //ne lehessen az elején nulla
 //ne lehessen több tizedespont
-//ha tizedesponttal kezdek, tegyen elé nullát
-//nullával nem lehet osztani
-//nem lehet operátorral kezdeni
-//tovább kell számolni az előző eredménnyel
+//KÉSZ  ha tizedesponttal kezdek, tegyen elé nullát
+//KÉSZ  nullával nem lehet osztani
+//KÉSZ  nem lehet operátorral kezdeni
+//KÉSZ  enter billentyű nem működik
+//KÉSZ  tovább kell számolni az előző eredménnyel
 ///KEYEVENTS
+
 $(document).keydown(function(e) {
     if(e.keyCode == 97) {add(1)}
     else if(e.keyCode == 98) {add(2)}
@@ -67,10 +78,12 @@ $(document).keydown(function(e) {
     else if(e.keyCode == 107) {operation('+')}
     else if(e.keyCode == 8) {backspace()}
     else if(e.keyCode == 46) {clr()}
-})/*
-$(document).keypress(function(e) {
-    else if(e.which == 13) {equals()}
-})*/
+})
+
+$(document).keyup(function(e) {
+    if(e.which == 13) {equals()}
+})
+
 function darkmode() {
     $('#screen').css('background', '#222')
     $('#screen').css('color', '#fff')
@@ -78,5 +91,3 @@ function darkmode() {
     $('button').css('color', '#fff')
     $('button').css('border-color', '#444')
 }
-
-//darkmode()
