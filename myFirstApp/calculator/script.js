@@ -4,17 +4,16 @@ let a = "", b = "", c = "";
 function add(num) {
     /*if (b != "") {
         //clr()
-    } else */if (num == '.' && (a == "" || a == "0")) {
+    } else */
+    if (num == '.' && (a == "" || a == "0")) {
         a = "0"
-    } else if (a != "" && b == "" && c == "") {
-        //clr()
-    } else if (a.includes(".")) {
-        console.log("error")
-    }
-    if /*(num == 0 && a == "0") {a = ""; num = ""}
-    else if*/ (b == "") {disp('up', a+num)}
-    else {disp('up', `${b} ${c} ${a+num}`)}
-    a += num;
+    } //else if (a != "" && b == "" && c == "") {clr()}
+
+    if (num == '.' && a.includes(".")) {}
+    else if (a == "0" && num != '.') {disp('up', num); a = num;}
+    else if (b == "") {disp('up', a+num); a += num;}
+    else {disp('up', `${b} ${c} ${a+num}`); a += num;}
+    console.log(`a = ${a}, b = ${b}, c = ${c}, num = ${num}`)
 }
 function disp(pos, curr) {
     if (pos == 'dwn') {
@@ -38,7 +37,7 @@ function operation(o) {
     }
 }
 function equals() {
-    if (a == "666") {darkmode(); clr()}
+    if (a == "666") {darkmode();/* clr() */}
     else if (a == 0 && c =="/") {disp('dwn', "Error")}
     else if (c == "+") {a = parseFloat(b) + parseFloat(a); disp('dwn', a)}
     else if (c == "-") {a = parseFloat(b) - parseFloat(a); disp('dwn', a)}
@@ -52,15 +51,17 @@ function backspace() {
 }
 ///BUGFIXES
 //ne lehessen az elején nulla
-//ne lehessen több tizedespont
+//eredménykiírásnál, ha tizedest írok, akkor clr() és "0."
+//KÉSZ  ne lehessen több tizedespont
 //KÉSZ  ha tizedesponttal kezdek, tegyen elé nullát
 //KÉSZ  nullával nem lehet osztani
 //KÉSZ  nem lehet operátorral kezdeni
-//KÉSZ  enter billentyű nem működik
+//KÉSZ  enter billentyű nem működik -- elvileg igen
 //KÉSZ  tovább kell számolni az előző eredménnyel
 ///KEYEVENTS
 
 $(document).keydown(function(e) {
+    e.preventDefault();
     if(e.keyCode == 97) {add(1)}
     else if(e.keyCode == 98) {add(2)}
     else if(e.keyCode == 99) {add(3)}
@@ -78,11 +79,16 @@ $(document).keydown(function(e) {
     else if(e.keyCode == 107) {operation('+')}
     else if(e.keyCode == 8) {backspace()}
     else if(e.keyCode == 46) {clr()}
+    else if(e.keyCode == 13) {equals()}
 })
-
-$(document).keyup(function(e) {
-    if(e.which == 13) {equals()}
-})
+/*
+input.addEventListener("keyup", function(e) {
+    if (e.keyCode === 13) {
+        e.preventDefault();
+        document.getElementById("equBtn").click();
+    }
+});
+*/
 
 function darkmode() {
     $('#screen').css('background', '#222')
