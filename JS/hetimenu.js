@@ -1,40 +1,40 @@
-let week = 19;
+let week = 23;
 let hetimenu = {
     "hétfő": [
-        "Burgonyakrémleves",
-        "A. Bolognai rakott spagetti",
-        "B. Szezámmagos csirkemell rizibizivel"
+        "Paradicsomleves",
+        "A. Zöldfűszeres bundában sült sertéskaraj, fűszeres kockaburgonyával",
+        "B. Zöldséges kínai csirkecsíkok párolt jázminrizzsel"
     ],
     "kedd": [
-        "Májusi zöldségleves",
-        "A. Sertéskaraj császárszalonnás lecsóval, párolt rizzsel",
-        "B. Tejszínes-gombás csirke csíkok orsótésztával",
-        "C. Burgonyafőzelék fasírttal"
+        "Zöldborsóleves",
+        "A. Csikós tokány főtt tésztával",
+        "B. Fokhagymás sült csirkecomb petrezselymes burgonyával",
+        "C. Tengeri hal kukoricalisztben sütve joghurtos salátával"
     ],
     "szerda": [
-        "Lebbencsleves",
+        "Korhelyleves",
         "A. Fix – Szántódi ropogós sült burgonyával",
-        "B. Cézár saláta",
-        "C. Grízes tészta sárgabarack lekvárral"
+        "B. Zúzapörkölt galuskával",
+        "C. Áfonyás-vaníliás palacsinta"
     ],
     "csütörtök": [
-        "Meggyleves",
+        "Őszibarack krémleves",
         "A. Fix – Mokkapecsenye sült burgonyával",
-        "B. Csirkepaprikás galuskával",
-        "C. Rántott cukkini, karfiol, gomba, zöldséges jázmin rizzsel"
+        "B. Brokkolival, füstölt sajttal töltött csirkemell burgonyapürével",
+        "C. Káposztás tészta"
     ],
     "péntek": [
-        "Lencsegulyás",
-        "A. Brassói aprópecsenye",
-        "B. Kijevi csirkemell burgonyapürével"
+        "Palócleves",
+        "A. Túrós tészta mangalica tepertővel",
+        "B. Gyros tál"
     ],
     "szombat": [
-        "Zöldborsóleves",
-        "A. Sertéskaraj bécsi bundában vegyes körettel"
+        "Tyúkhúsleves",
+        "A. Csirkemell vaslapon sütve cheddar sajt mártással hercegnő burgonyával"
     ],
     "vasárnap": [
-        "Tyúkhúsleves",
-        "A. Gyros tál"
+        "Sajtkrémleves",
+        "A. Rántott sertéskaraj hasábburgonyával"
     ]
 }
 
