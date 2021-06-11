@@ -102,17 +102,17 @@ function parallaxSwitch() {
 }
 
 function checkDoc() {
-  if (document.URL == "https://akosaf.github.io/" || document.URL == "https://akosaf.github.io/index.html") {
-    return "home"
-  } else if (document.URL == "https://akosaf.github.io/etterem.html") {
+    if (/etterem.html/.test(document.URL)) {
     return "etterem"
-  } else if (document.URL == "https://akosaf.github.io/panzio.html") {
+  } else if (/panzio.html/.test(document.URL)) {
     return "panzio"
-  } else if (document.URL == "https://akosaf.github.io/etlap.html") {
+  } else if (/etlap.html/.test(document.URL)) {
     return "etlap"
-  } else if (document.URL == "https://akosaf.github.io/menu.html") {
+  } else if (/menu.html/.test(document.URL)) {
     return "menu"
-  } else if (document.URL == "https://akosaf.github.io/galeria.html") {
+  } else if (/galeria.html/.test(document.URL)) {
     return "galeria"
+  } else {
+    return "home"
   }
 }
