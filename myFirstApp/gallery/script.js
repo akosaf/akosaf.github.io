@@ -2,7 +2,7 @@
 
 let galleryArr = [
     {
-        image: "./img/DSC_0412.JPG",
+        image: "./img/DSC_0412.jpg",
         title: "Piano",
         paragraph: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas totam doloremque adipisci necessitatibus eius ad, quasi nobis illum quam itaque!"
     },
@@ -12,7 +12,7 @@ let galleryArr = [
         paragraph: "Lorem eveniet sed nobis. Itaque, autem! Sapiente, non repellendus! Quas totam doloremque adipisci necessitatibus eius ad, quasi nobis illum quam itaque!"
     },
     {
-        image: "./img/SAM_0387.JPG",
+        image: "./img/SAM_0387.jpg",
         title: "Snail",
         paragraph: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem in eveniet sed nobis. Itaque, autem! Sapiente, non repellendus! Quas totam doloremque adipisci necessitatibus eius ad, quasi nobis illum quam itaque!"
     },
