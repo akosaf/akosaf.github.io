@@ -60,6 +60,7 @@ function choosePic(i) {
     current = i;
     cancelUpload();
 }
+choosePic(current)
 
 function prev() {
     (current <= 0)
