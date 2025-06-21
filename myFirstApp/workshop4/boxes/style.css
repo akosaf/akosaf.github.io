@@ -1,0 +1,18 @@
+.a, .b {
+    border: solid 2px #08f;
+    padding: 12px;
+    margin: 5px;
+    display: inline-block;
+}
+
+.a .box, .b .box {
+    height: 40px;
+    width: 40px;
+    background: #00f;
+    display: inline-block;
+    margin: 5px;
+}
+
+.b {
+    background: red;
+}

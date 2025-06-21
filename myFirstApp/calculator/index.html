@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Black+Ops+One&family=Wallpoet&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div id="screen"></div>
+        <div id="numKeyboard">
+            <div class="rows">
+                <div class="lines"><button onclick="clr()" id="clrBtn">C</button><button onclick="operation('/')" id="devBtn">/</button><button onclick="operation('*')" id="multBtn">*</button></div>
+                <div class="lines"><button onclick="add(7)" id="num7Btn">7</button><button onclick="add(8)" id="num8Btn">8</button><button onclick="add(9)" id="num9Btn">9</button></div>
+                <div class="lines"><button onclick="add(4)" id="num4Btn">4</button><button onclick="add(5)" id="num5Btn">5</button><button onclick="add(6)" id="num6Btn">6</button></div>
+                <div class="lines"><button onclick="add(1)" id="num1Btn">1</button><button onclick="add(2)" id="num2Btn">2</button><button onclick="add(3)" id="num3Btn">3</button></div>
+                <div id="lastRow" class="lines"><button onclick="add(0)" id="zeroBtn">0</button><button onclick="add('.')" id="fracBtn">,</button></div>
+            </div>
+            <div class="column">
+                <button onclick="backspace()" id="backBtn">&larr;</button>
+                <button onclick="operation('-')" id="subBtn">-</button>
+                <button onclick="operation('+')" id="addBtn">+</button>
+                <button onclick="equals()" id="equBtn">=</button>
+            </div>
+        </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

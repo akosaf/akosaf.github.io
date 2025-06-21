@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Baloo Tamma 2', cursive;
+    width: auto;
+    height: auto;
+    padding: 0;
+    cursor: default;
+}
+h2, p {
+    font-family: 'Nixie One', cursive;
+}
+body {
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 34%, rgba(210,210,210,1) 100%) fixed;
+    opacity: 0;
+    transition: opacity 500ms;
+}
+.big, ul {
+    box-shadow: 2px 2px 8px rgba(100, 100, 100, 0.5);
+}
+main {
+    /* background: rgba(255, 255, 255, 0); */
+    max-width: 800px;
+    margin: 60px auto;
+}
+.navBtn {
+    height: 400px;
+    width: 50px;
+    background: url(/myFirstApp/gallery/arrow.svg) no-repeat center,
+    linear-gradient(#fff, #eee);
+    border: none;
+    z-index: 2;
+}
+#next {
+    transform: scaleX(-1);
+}
+.big {
+    display: flex;
+}
+.bigPic {
+    height: 400px;
+    width: 700px;
+    background-image: url(./img/DSC_0412.JPG);
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+}
+div.info {
+    /* position: absolute; */
+    /* height: 400px; */
+    /* bottom: 23px; */
+}
+h2, p {
+    width: 700px;
+    color: white;
+    background: rgba(0, 0, 0, 0.25);
+}
+h2 {
+    padding: 8px 8px 0px 8px;
+}
+p {
+    padding: 4px 8px 8px 8px;
+}
+.small {
+    width: auto;
+    /* max-width: 800px; */
+    height: auto;
+    margin: 0 auto;
+}
+li, .bigPic {
+    background-size: cover;
+}
+ul {
+    display: flex;
+    flex-wrap: nowrap;
+    height: auto;
+    padding: 0;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+li {
+    list-style: none;
+    width: 100px;
+    height: 70px;
+    padding: 0;
+    flex-shrink: 1;
+    transition: transform 100ms;
+}
+li:hover {
+    transform: scale(1.3);
+    z-index: 1;
+}
+
+/***** UPLOAD *****/
+
+#addBtn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+div.upld {
+    width: 400px;
+    background: rgba(255, 255, 255, 0.4);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    display: none;
+}
+div.upld button{
+    padding: 7px 0px;
+    background-color: rgba(0, 0, 0, 0.08);
+}
+div.upld button, #addBtn, #editBtn {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: none;
+    font-size: 17px;
+    color: #fff;
+    font-weight: bold;
+}
+::placeholder {
+    color: rgba(0, 0, 0, 0.616);
+}
+div.upld input {
+    height: 40px;
+    width: 100%;
+    border: solid 1px rgba(0, 0, 0, 0.08);;
+    padding: 5px 10px;
+    font-size: 17px;
+    background-color: rgba(0, 0, 0, 0);
+}
+#addBtn, #editBtn {
+    opacity: 20%;
+    padding: 5px 0px;
+    border: solid 2px rgba(255, 255, 255, 0.3);
+    transition: opacity 200ms;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+#addBtn:hover, #editBtn:hover {
+    opacity: 100%;
+}
+#editBtn {
+    position: absolute;
+    top: 10px;
+    left: 52px;
+}
+@media (max-width: 800px) {
+    .small {
+        display: none;
+    }
+    .bigPic {
+        order: -1;
+        /* width: auto; */
+    }
+    .navBtn {
+        height: 46px;
+        width: 50%;
+    }
+    .big {
+        flex-wrap: wrap;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+}
+@media (max-width: 700px) {
+    h2, p, .bigPic {
+        width: 100%;
+    }
+}

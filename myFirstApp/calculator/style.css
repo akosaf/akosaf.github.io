@@ -1,0 +1,75 @@
+/* 
+font-family: 'Audiowide', cursive;
+font-family: 'Black Ops One', cursive;
+font-family: 'Wallpoet', cursive;
+*/
+
+* {
+    font-family: 'Audiowide', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+    cursor: default;
+}
+body {
+    overflow: hidden;
+}
+main {
+    width: 61%;
+    margin: 0 auto;
+}
+#screen {
+    font-family: 'Wallpoet', cursive;
+    height: 20vh;
+    width: 60vw;
+    background-color: #ddd;
+    font-size: 8vh;
+    text-align: right;
+    padding: 0 10px;
+}
+#numKeyboard {
+    display: flex;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+}
+#lastRow {
+    display: flex;
+}
+#zeroBtn, #equBtn {
+    flex-grow: 2;
+}
+button {
+    width: 15vw;
+    height: 16vh;
+    font-size: 20px;
+    border: solid 1px #999;
+    border-radius: 0px;
+}
+span {
+    font-size: 12vh;
+    font-family: 'Wallpoet', cursive;
+}
+@media (max-width: 720px) {
+    main {
+        width: 100%;
+    }
+    button {
+        width: 25vw;
+    }
+    #screen {
+        width: 100vw;
+    }
+}
+@media (max-width: 376px) {
+    button {
+        height: 14vh;
+    }
+    #screen {
+        height: 18vh;
+        font-size: 5vh;
+    }
+}
