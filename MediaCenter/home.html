@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AkOS Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* System-tray like navbar styling */
+        #navbar {
+            background: #111;
+            color: #ddd;
+            height: 44px;
+            box-shadow: inset 0 -1px 0 rgba(255,255,255,0.03);
+            font-size: 0.9rem;
+        }
+        #navbarContainer {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+        #homeBtn {
+            background: transparent;
+            border: none;
+            color: #ddd;
+            padding: 4px 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        #homeBtn:hover { color: #fff; text-decoration: none; }
+
+        /* area where JS can insert divs */
+        #trayApps {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            margin-left: 0.35rem;
+            height: 28px;
+            overflow-x: auto;
+        }
+        .tray-item {
+            background: #222;
+            color: #ccc;
+            padding: 3px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        /* right side clock/date */
+        #trayRight {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #ddd;
+            font-variant-numeric: tabular-nums;
+            margin-left: auto;
+            padding-right: 6px;
+        }
+        
+        #sysTime { font-weight: 600; }
+        #sysDate { font-size: 0.85rem; color: #bdbdbd; }
+        #trayRight span {
+            display: block; /* Ensure they stack vertically */
+            margin-top: 2px; /* Add some space between them */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar (system tray style) -->
+    <nav id="navbar" class="w-100">
+        <div id="navbarContainer" class="container-fluid">
+            <!-- left: home button and tray apps -->
+            <div id="trayLeft" class="d-flex align-items-center">
+                <button id="homeBtn" title="Home" type="button" aria-label="Home">
+                    <!-- minimal home icon using unicode to avoid extra assets -->
+                    <span id="homeIcon">🏠</span>
+                    <span id="homeLabel">Home</span>
+                </button>
+
+                <!-- JS will insert divs here -->
+                <div id="trayApps" aria-live="polite"></div>
+            </div>
+
+            <!-- right: clock and date -->
+            <div id="trayRight" role="status" aria-atomic="true">
+                <span id="sysDate" title="Current date">Loading date</span>
+                <span id="sysTime" title="Current time">--:--:--</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main page content area -->
+    <main id="mainContent" class="container mt-3">
+        <h1 id="pageTitle">AkOS Home</h1>
+        <p id="pageIntro">Use the tray to the left of the clock to add items programmatically.</p>
+    </main>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Add an item to the trayApps area. Every created item gets an id.
+        function addTrayItem(itemId, label, title) {
+            const parent = document.getElementById('trayApps');
+            if (!parent) return null;
+            const el = document.createElement('div');
+            el.className = 'tray-item';
+            el.id = itemId;
+            el.title = title || label;
+            el.textContent = label;
+            parent.appendChild(el);
+            return el;
+        }
+
+        // Example: insert a few sample tray items (IDs provided)
+        addTrayItem('trayItem-music', 'Music', 'Open Music');
+        addTrayItem('trayItem-mail', 'Mail', 'Open Mail');
+        addTrayItem('trayItem-weather', 'Weather', 'Open Weather');
+
+        // Clock and date updater
+        function updateClockAndDate() {
+            const now = new Date();
+            const timeEl = document.getElementById('sysTime');
+            const dateEl = document.getElementById('sysDate');
+            if (!timeEl || !dateEl) return;
+            // Format: HH:MM:SS (24h) and localized date
+            timeEl.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            dateEl.textContent = now.toLocaleDateString();
+        }
+        updateClockAndDate();
+        setInterval(updateClockAndDate, 1000);
+
+        // Optional: home button action
+        document.getElementById('homeBtn').addEventListener('click', function () {
+            // Example action: scroll main content to top
+            document.getElementById('mainContent').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Expose addTrayItem globally for console/other scripts
+        window.addTrayItem = addTrayItem;
+    </script>
+</body>
+</html>

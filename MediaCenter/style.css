@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Comfortaa', sans-serif; /* Use Comfortaa font */
+    background-image: url('https://wallpapers.com/images/hd/wonderful-pathway-during-sunset-4ct14f47hnk8q9e0.jpg'); /* Background image */
+    background-size: cover;          /* fit entire image inside the viewport */
+    background-position: center;       /* center image */
+    background-repeat: no-repeat;      /* don't tile */
+    background-attachment: fixed;      /* keep image fixed when scrolling */
+    min-height: 100vh;                 /* ensure it fills the viewport height */
+    margin: 0;
+}
+
+/* ensure no default padding causes a gap above the navbar */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+/* Remove scrollbar */
+body {
+    overflow: hidden; /* Hides the scrollbar */
+}
+/* Navbar styling */
+#navbar {
+    background-color: rgba(211, 211, 211, 0.20) !important; /* override Bootstrap */
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    position: fixed; /* Keep navbar fixed at the top */
+    top: 0;           /* flush to top */
+    left: 0;          /* flush to left */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it stays on top */
+    background-clip: padding-box; /* keeps blur/background consistent */
+}
+
+/* Remove the transform that hides the navbar */
+#navbar {
+    background-color: rgba(211, 211, 211, 0.20) !important;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    margin: 0;
+}
+
+/* when body has this class the navbar is visible */
+body.nav-visible #navbar {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* ensure hover over the navbar keeps it visible */
+#navbar:hover {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+}
+
+/* small invisible top hit area to allow immediate reveal on hover (optional visual aid removed) */
+#top-hit-area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    z-index: 2000;
+    pointer-events: none; /* we don't need it to block pointer events; JS watches mousemove */
+}
+
+/* changed code: fixed width and alignment for trayRight */
+#trayRight {
+    width: 160px;          /* fixed width */
+    min-width: 120px;      /* allow some shrink on very small screens */
+    display: flex;
+    flex-direction: column; /* date above time */
+    align-items: center;    /* center horizontally */
+    justify-content: center; /* center vertically */
+    gap: 0.25rem;
+    padding-left: 0.5rem;
+    box-sizing: border-box;
+}
+
+/* changed code: remove default margin under the time (.h5) */
+#sysTime {
+    margin: 0; /* removes the ~8px bottom margin from Bootstrap .h5 */
+    padding: 0;
+    line-height: 1;
+}
+
+/* changed code: color theming based on background brightness */
+:root {
+    --text-color: #000;
+    --muted-color: rgba(0,0,0,0.65);
+    --btn-border: rgba(0,0,0,0.2);
+}
+
+/* dark background -> light text */
+.bg-dark {
+    --text-color: #ffffff;
+    --muted-color: rgba(255,255,255,0.8);
+    --btn-border: rgba(255,255,255,0.35);
+}
+
+/* light background -> dark text */
+.bg-light {
+    --text-color: #000000;
+    --muted-color: rgba(0,0,0,0.65);
+    --btn-border: rgba(0,0,0,0.2);
+}
+
+/* apply colors globally */
+body, #navbar, #mainContent, #pageTitle, #pageIntro, #trayApps, #sysDate, #sysTime, #homeBtn {
+    color: var(--text-color) !important;
+}
+
+/* muted / secondary text */
+#sysDate, #pageIntro {
+    color: var(--muted-color) !important;
+}
+
+/* adjust outline button to follow text color */
+#homeBtn {
+    background: transparent;
+    color: var(--text-color) !important;
+    border-color: var(--btn-border) !important;
+}
+
+/* ensure links and tray items follow color */
+a, .tray-item, button {
+    color: var(--text-color) !important;
+}
+
+/* small transition when theme toggles */
+body {
+    transition: color 200ms ease, background-color 200ms ease;
+}
+
+/* Tiles container */
+.tiles-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    min-height: 100vh;
+}
+
+/* App tile styling */
+.app-tile {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    padding: 1rem;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.app-tile:hover {
+    transform: scale(1.05);
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.app-tile img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 0.5rem;
+}
+
+.app-tile span {
+    color: inherit;
+    font-size: 0.9rem;
+}
+
+/* Iframe container */
+.iframe-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: #000;
+    display: none;
+}
+
+.iframe-container.active {
+    display: block;
+}
+
+.iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
