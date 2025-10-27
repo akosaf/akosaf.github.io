@@ -96,21 +96,24 @@ body.nav-visible #navbar {
 :root {
     --text-color: #000;
     --muted-color: rgba(0,0,0,0.65);
-    --btn-border: rgba(0,0,0,0.2);
+    --btn-border: rgba(0,0,0,0.1);
+    --btn-color: rgba(0,0,0,0.05);
 }
 
 /* dark background -> light text */
 .bg-dark {
     --text-color: #ffffff;
     --muted-color: rgba(255,255,255,0.8);
-    --btn-border: rgba(255,255,255,0.35);
+    --btn-border: rgba(255,255,255,0.2);
+    --btn-color: rgba(255,255,255,0.1);
 }
 
 /* light background -> dark text */
 .bg-light {
     --text-color: #000000;
     --muted-color: rgba(0,0,0,0.65);
-    --btn-border: rgba(0,0,0,0.2);
+    --btn-border: rgba(0,0,0,0.1);
+    --btn-color: rgba(0,0,0,0.05);
 }
 
 /* apply colors globally */
@@ -128,6 +131,11 @@ body, #navbar, #mainContent, #pageTitle, #pageIntro, #trayApps, #sysDate, #sysTi
     background: transparent;
     color: var(--text-color) !important;
     border-color: var(--btn-border) !important;
+    font-size: 42px !important;
+    padding: 0px !important;
+    line-height: 0 !important;
+    border-radius: 50%;
+    background-color: var(--btn-color);
 }
 
 /* ensure links and tray items follow color */

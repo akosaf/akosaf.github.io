@@ -73,6 +73,11 @@
   cursor: pointer;
   font-size: 1rem !important; /* use rem instead of px */
   font-weight: 400 !important; /* changed code: explicit weight */
+  font-size: 42px !important;
+  padding: 0px !important;
+  line-height: 0 !important;
+  border-radius: 50%;
+  background-color: var(--btn-color);
 }
 
 /* date/time */
@@ -95,13 +100,15 @@
 #akos-navbar.bg-dark {
   --text-color: #ffffff;
   --muted-color: rgba(255,255,255,0.8);
-  --btn-border: rgba(255,255,255,0.35);
+    --btn-border: rgba(255,255,255,0.2);
+    --btn-color: rgba(255,255,255,0.1);
 }
 
 #akos-navbar.bg-light {
   --text-color: #000000;
   --muted-color: rgba(0,0,0,0.65);
-  --btn-border: rgba(0,0,0,0.2);
+    --btn-border: rgba(0,0,0,0.1);
+    --btn-color: rgba(0,0,0,0.05);
 }
 
 /* force proper inheritance and prevent site CSS interference */
