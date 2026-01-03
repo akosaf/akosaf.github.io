@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -34,34 +35,17 @@ body {
     width: 100%; /* Full width */
     z-index: 1000; /* Ensure it stays on top */
     background-clip: padding-box; /* keeps blur/background consistent */
-}
-
-/* Remove the transform that hides the navbar */
-#navbar {
-    background-color: rgba(211, 211, 211, 0.20) !important;
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
     margin: 0;
 }
 
 /* when body has this class the navbar is visible */
-body.nav-visible #navbar {
+body.nav-visible #navbar,
+#navbar:hover  {
     transform: translateY(0);
     opacity: 1;
 }
 
-/* ensure hover over the navbar keeps it visible */
-#navbar:hover {
-    transform: translateY(0) !important;
-    opacity: 1 !important;
-}
-
-/* small invisible top hit area to allow immediate reveal on hover (optional visual aid removed) */
+/* small invisible top hit area to allow immediate reveal on hover (optional visual aid removed)*/
 #top-hit-area {
     position: fixed;
     top: 0;
@@ -74,22 +58,25 @@ body.nav-visible #navbar {
 
 /* changed code: fixed width and alignment for trayRight */
 #trayRight {
-    width: 160px;          /* fixed width */
+    width: 120px;          /* fixed width */
     min-width: 120px;      /* allow some shrink on very small screens */
     display: flex;
     flex-direction: column; /* date above time */
     align-items: center;    /* center horizontally */
     justify-content: center; /* center vertically */
     gap: 0.25rem;
-    padding-left: 0.5rem;
-    box-sizing: border-box;
+/*    padding-left: 0.5rem;*/
+/*    box-sizing: border-box;*/
 }
 
 /* changed code: remove default margin under the time (.h5) */
 #sysTime {
-    margin: 0; /* removes the ~8px bottom margin from Bootstrap .h5 */
-    padding: 0;
     line-height: 1;
+    font-size: 20px;
+}
+
+#sysDate {
+    font-size: 12px;
 }
 
 /* changed code: color theming based on background brightness */
@@ -104,8 +91,8 @@ body.nav-visible #navbar {
 .bg-dark {
     --text-color: #ffffff;
     --muted-color: rgba(255,255,255,0.8);
-    --btn-border: rgba(255,255,255,0.2);
-    --btn-color: rgba(255,255,255,0.1);
+    --btn-border: rgba(255,255,255,0.1);
+    --btn-color: rgba(255,255,255,0.05);
 }
 
 /* light background -> dark text */
@@ -136,6 +123,11 @@ body, #navbar, #mainContent, #pageTitle, #pageIntro, #trayApps, #sysDate, #sysTi
     line-height: 0 !important;
     border-radius: 50%;
     background-color: var(--btn-color);
+    font-size: 32px;
+    size: 32px;
+    width: 64px;
+    height: 64px;
+    /*box-sizing: border-box;*/
 }
 
 /* ensure links and tray items follow color */
