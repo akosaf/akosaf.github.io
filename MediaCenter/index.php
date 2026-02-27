@@ -54,5 +54,62 @@
             window.location.href = 'https://akosaf.github.io/MediaCenter/index.php';
         });
     </script>
+
+    <!-- floating add button -->
+    <button id="addAppBtn" class="btn btn-primary rounded-circle position-fixed" style="bottom:20px; right:20px; width:56px; height:56px;">
+        <i class="bi bi-plus-lg"></i>
+    </button>
+
+    <!-- add application modal -->
+    <div class="modal fade" id="addAppModal" tabindex="-1" aria-labelledby="addAppModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <form id="addAppForm" class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addAppModalLabel">Add Application</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="appAlt" class="form-label">Name</label>
+              <input type="text" class="form-control" id="appAlt" name="alt" required>
+            </div>
+            <div class="mb-3">
+              <label for="appLink" class="form-label">Link</label>
+              <input type="url" class="form-control" id="appLink" name="link" required>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary"><i class="bi bi-plus-lg"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+        // bootstrap modal control
+        const addAppBtn = document.getElementById('addAppBtn');
+        addAppBtn.addEventListener('click', () => {
+            const modalEl = document.getElementById('addAppModal');
+            const modal = new bootstrap.Modal(modalEl);
+            modal.show();
+        });
+
+        // handle form submit via AJAX
+        document.getElementById('addAppForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const data = new FormData(form);
+            const resp = await fetch('php/addApp.php', {
+                method: 'POST',
+                body: data
+            });
+            const result = await resp.json();
+            if (result.success) {
+                location.reload();
+            } else {
+                alert('Error: ' + (result.message || 'unable to add')); 
+            }
+        });
+    </script>
 </body>
 </html>
